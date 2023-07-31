@@ -1,4 +1,5 @@
-export interface Name {
+// random user: https://randomuser.me
+/* export interface Name {
   title: string
   first: string
   last: string
@@ -51,4 +52,32 @@ export interface User {
   email: string
   picture: Picture
   login: Login
+} */
+
+export interface Coordenates {
+  lat: string
+  lng: string
+}
+export interface Address {
+  street: string
+  suite: string
+  city: string
+  zipcode: string
+  geo: Coordenates
+}
+
+export interface Company {
+  name: string
+  catchPhrase: string
+  bs: string
+}
+export interface User {
+  id: number
+  name: string
+  username: string
+  email: string
+  address: Address
+  phone: string
+  website: string
+  company: Company
 }
