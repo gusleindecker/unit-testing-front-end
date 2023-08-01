@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import type { User } from '@/types'
+import type { User } from "@/types";
 
 export interface UserProfileProps {
-  user: User
+  user: User;
 }
 
-const props = defineProps<UserProfileProps>()
+const props = defineProps<UserProfileProps>();
 </script>
 <template>
   <div class="bg-slate-200">
     <div class="mx-auto">
-      <div class="flex bg-white sm:shadow-md sm:rounded-lg p-4">
+      <div class="flex bg-white p-4 sm:rounded-lg sm:shadow-md">
         <img
-          class="h-36 w-36 flex-none rounded-full bg-gray-50 mr-7"
+          class="mr-7 h-36 w-36 flex-none rounded-full bg-gray-50"
           :src="`https://i.pravatar.cc/144?u=${props.user.id}`"
           :alt="`${props.user.name}'s thumbnail`" />
         <div class="min-w-0 flex-auto text-gray-900">
-          <p class="text-lg font-semibold leading-6 text-black mb-3">{{ props.user.name }}</p>
-          <p class="mt-1 truncate text-sm leading-5 flex">
+          <p class="mb-3 text-lg font-semibold leading-6 text-black">
+            {{ props.user.name }}
+          </p>
+          <p class="mt-1 flex truncate text-sm leading-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -34,7 +36,7 @@ const props = defineProps<UserProfileProps>()
             <span class="font-semibold">email:</span>
             <span class="lowercase">&nbsp;{{ props.user.email }}</span>
           </p>
-          <p class="mt-1 truncate text-sm leading-5 flex">
+          <p class="mt-1 flex truncate text-sm leading-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -49,11 +51,12 @@ const props = defineProps<UserProfileProps>()
             </svg>
             <span class="font-semibold">address:</span>
             <span>
-              &nbsp;{{ props.user.address.street }}, {{ props.user.address.suite }} -
+              &nbsp;{{ props.user.address.street }},
+              {{ props.user.address.suite }} -
               {{ props.user.address.city }}
             </span>
           </p>
-          <p class="mt-1 truncate text-sm leading-5 flex">
+          <p class="mt-1 flex truncate text-sm leading-5">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

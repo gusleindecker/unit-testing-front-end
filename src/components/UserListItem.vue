@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import type { User } from '@/types'
-import { useRouter } from 'vue-router'
+import type { User } from "@/types";
+import { useRouter } from "vue-router";
 
 export interface UserListItemProps {
-  user: User
+  user: User;
 }
 
-const props = defineProps<UserListItemProps>()
+const props = defineProps<UserListItemProps>();
 
-const router = useRouter()
+const router = useRouter();
 </script>
 <template>
   <div class="flex gap-x-4">
@@ -17,8 +17,12 @@ const router = useRouter()
       :src="`https://i.pravatar.cc/75?u=${props.user.id}`"
       :alt="`${props.user.name}'s thumbnail`" />
     <div class="min-w-0 flex-auto">
-      <p class="text-sm font-semibold leading-6 text-gray-900">{{ props.user.name }}</p>
-      <p class="mt-1 truncate text-xs leading-5 text-gray-500">{{ props.user.email }}</p>
+      <p class="text-sm font-semibold leading-6 text-gray-900">
+        {{ props.user.name }}
+      </p>
+      <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+        {{ props.user.email }}
+      </p>
     </div>
   </div>
   <div class="hidden sm:flex sm:flex-col sm:items-end">
