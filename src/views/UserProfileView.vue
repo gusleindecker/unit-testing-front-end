@@ -27,13 +27,13 @@ const { isLoadingWithDelay } = useLoadingDelay(isLoading, 400);
     <main>
       <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
         <FadeTransition>
-          <user-profile
-            v-if="!isLoadingWithDelay && user"
-            :user="user" />
+          <div v-if="!isLoadingWithDelay && user">
+            <user-profile :user="user" />
+          </div>
           <div
-            v-else-if="error"
+            v-else-if="!isLoadingWithDelay && error"
             class="text-red-500">
-            Error: {{ error }}
+            {{ error }} User {{ route.params.id }} Profile.
           </div>
         </FadeTransition>
         <FadeTransition>

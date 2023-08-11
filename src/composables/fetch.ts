@@ -2,12 +2,11 @@ import { ref, toValue, type MaybeRefOrGetter } from "vue";
 
 export const useFetch = async (url: MaybeRefOrGetter<string>) => {
   const isLoading = ref<boolean>(true);
-  const data = ref<unknown>([]);
-  const error = ref<unknown>(null);
+  const data = ref<unknown>();
+  const error = ref<Error>();
 
   try {
     const response = await fetch(toValue(url));
-
     if (!response.ok) {
       throw new Error(`Failed to fetch data.`);
     }
@@ -15,7 +14,7 @@ export const useFetch = async (url: MaybeRefOrGetter<string>) => {
     const parsedResponse = await response.json();
     data.value = parsedResponse;
   } catch (err) {
-    error.value = err;
+    error.value = err as Error;
   } finally {
     isLoading.value = false;
   }

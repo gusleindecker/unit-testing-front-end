@@ -5,7 +5,7 @@ import type { User } from "@/types";
 export const useUsers = () => {
   const users = ref<User[]>([]);
   const isLoading = ref<boolean>(false);
-  const error = ref<unknown>(null);
+  const error = ref<Error>();
   const url = "https://jsonplaceholder.typicode.com/users";
 
   const getUsers = async () => {

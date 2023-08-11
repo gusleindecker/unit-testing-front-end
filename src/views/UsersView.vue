@@ -21,12 +21,12 @@ const { isLoadingWithDelay } = useLoadingDelay(isLoading, 400);
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
       <FadeTransition>
         <user-list
-          v-if="!isLoadingWithDelay"
+          v-if="!isLoadingWithDelay && !error"
           :users="users" />
         <div
-          v-else-if="error"
+          v-else-if="!isLoadingWithDelay && error"
           class="text-red-500">
-          Error: {{ error }}
+          {{ error }} Users List.
         </div>
       </FadeTransition>
       <FadeTransition>
