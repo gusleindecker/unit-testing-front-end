@@ -2,8 +2,10 @@ import { ref, onBeforeMount } from "vue";
 import { useFetch } from "@/composables";
 import type { User } from "@/types";
 
+type UsersData = User[] | undefined;
+
 export const useUsers = () => {
-  const users = ref<User[]>([]);
+  const users = ref<UsersData>();
   const isLoading = ref<boolean>(false);
   const error = ref<Error>();
   const url = "https://jsonplaceholder.typicode.com/users";
@@ -16,7 +18,7 @@ export const useUsers = () => {
       error: userError,
     } = await useFetch(url);
 
-    users.value = data.value as User[];
+    users.value = data.value as UsersData;
     isLoading.value = userIsLoading.value;
     error.value = userError.value;
   };
