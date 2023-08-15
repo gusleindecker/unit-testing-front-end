@@ -15,7 +15,8 @@ const props = defineProps<UserListProps>();
     <li
       v-for="user in props.users"
       :key="user.id"
-      class="flex justify-between gap-x-6 py-5">
+      class="flex justify-between gap-x-6 py-5"
+      data-testid="userItem">
       <user-list-item :user="user" />
     </li>
   </ul>
