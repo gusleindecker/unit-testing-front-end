@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { flushPromises } from "@vue/test-utils";
 import { withSetup } from "@/test-utils";
 import { useUsers } from "@/composables";
-import { mockUsers } from "@/composables/mocks";
+import { mockUsers } from "@/mocks";
 import { mockEndpoint } from "@/utils";
 
 const usersEndpoint = "https://jsonplaceholder.typicode.com/users";
