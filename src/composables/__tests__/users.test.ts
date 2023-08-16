@@ -5,7 +5,7 @@ import { useUsers } from "@/composables";
 import { mockUsers, usersEndpoint } from "@/mocks";
 import { mockEndpoint } from "@/utils";
 
-describe("useUsers", () => {
+describe("composables/useUsers", () => {
   it("Should load users.", async () => {
     mockEndpoint(usersEndpoint, { body: mockUsers });
     const [result, app] = withSetup(() => useUsers());
