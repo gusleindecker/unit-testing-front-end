@@ -25,16 +25,14 @@ const { isLoadingWithDelay } = useLoadingDelay(isLoading, 400);
           :users="users" />
         <div
           v-else-if="!isLoadingWithDelay && error"
-          class="text-red-500"
-          data-testid="errorMessage">
+          class="text-red-500">
           {{ error }}
         </div>
       </FadeTransition>
       <FadeTransition>
         <div
           v-if="isLoading"
-          class="absolute bottom-0 left-0 right-0 top-10 m-auto flex h-7 w-32 justify-center"
-          data-testid="loader">
+          class="absolute bottom-0 left-0 right-0 top-10 m-auto flex h-7 w-32 justify-center">
           Loading users...
         </div>
       </FadeTransition>

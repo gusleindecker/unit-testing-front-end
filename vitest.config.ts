@@ -14,7 +14,6 @@ export default mergeConfig(
       transformMode: {
         web: [/\.[jt]sx$/],
       },
-      setupFiles: ["./src/test-utils/setup.ts"],
     },
   })
 );
