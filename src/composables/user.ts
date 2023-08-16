@@ -3,7 +3,7 @@ import { useFetch } from "@/composables";
 import type { User } from "@/types";
 
 export const useUser = (id: number) => {
-  const user = ref<User | null>(null);
+  const user = ref<User | null>();
   const isLoading = ref<boolean>(false);
   const error = ref<Error>();
   const url = `https://jsonplaceholder.typicode.com/users/${id}`;
