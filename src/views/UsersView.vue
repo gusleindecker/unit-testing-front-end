@@ -26,7 +26,7 @@ const { isLoadingWithDelay } = useLoadingDelay(isLoading, 400);
         <div
           v-else-if="!isLoadingWithDelay && error"
           class="text-red-500">
-          {{ error }} Users List.
+          {{ error }}
         </div>
       </FadeTransition>
       <FadeTransition>
