@@ -9,7 +9,7 @@ vi.mock("vue-router");
 const mockedUseRouter = vi.mocked(useRouter) as Mock;
 const pushSpy = vi.fn();
 
-describe("components/UserList.vue", () => {
+describe("components/UserListItem.vue", () => {
   it("Should display the content correctly and navigate to the user detail path when the User Details button is clicked.", async () => {
     const mockedUser = mockUsers[0];
     mockedUseRouter.mockReturnValueOnce({ push: pushSpy });
