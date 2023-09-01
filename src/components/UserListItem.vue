@@ -17,16 +17,24 @@ const router = useRouter();
       :src="`https://i.pravatar.cc/75?u=${props.user.id}`"
       :alt="`${props.user.name}'s thumbnail`" />
     <div class="min-w-0 flex-auto">
-      <p class="text-sm font-semibold leading-6 text-gray-900">
+      <p
+        class="text-sm font-semibold leading-6 text-gray-900"
+        data-testid="userName">
         {{ props.user.name }}
       </p>
-      <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+      <p
+        class="mt-1 truncate text-xs leading-5 text-gray-500"
+        data-testid="userEmail">
         {{ props.user.email }}
       </p>
     </div>
   </div>
   <div class="hidden sm:flex sm:flex-col sm:items-end">
-    <p class="text-sm leading-6 text-gray-900">{{ props.user.address.city }}</p>
+    <p
+      class="text-sm leading-6 text-gray-900"
+      data-testid="userCity">
+      {{ props.user.address.city }}
+    </p>
     <button
       type="button"
       @click="router.push(`/user/${props.user.id}`)"
